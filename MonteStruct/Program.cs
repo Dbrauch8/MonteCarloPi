@@ -15,6 +15,11 @@ namespace MonteStruct
             x = p1;
             y = p2;
         }
+
+       double Hypotenuse()
+        {
+            double hypoteneuse = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+        }
     }
 
     class Program
@@ -30,8 +35,8 @@ namespace MonteStruct
 
             double x;
             double y;
-            double z;
-               Coords [] point = new Coords[s1];
+
+            Coords[] point = new Coords[s1];
 
             for (var i = 0; i < s1; i++)
             {
@@ -41,22 +46,27 @@ namespace MonteStruct
 
             foreach (Coords i in point)
             {
-                Console.WriteLine("\t{0:f3} {1:f3}", i.x, i.y);
+                Console.WriteLine("\tx = {0:f3}, y = {1:f3}", i.x, i.y);
+
+                //    if (i.Hypotenuse() <= 1.0)
+                //    {
+                //        ++inCircle;
+                //    }
+                //}
+
+                //    each (var i in point)
+                //{
+                //    Console.WriteLine;
+                //}
+                //Console.ReadLine();
+
+                //z = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+
+                //Console.WriteLine(Math.Round(z, 3));
+
+                //
             }
-                
-            //    each (var i in point)
-            //{
-            //    Console.WriteLine;
-            //}
-            //Console.ReadLine();
-
-            //z = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
-
-            //Console.WriteLine(Math.Round(z, 3));
-
-            //
-        }
-
+        } 
     }
 }
 
