@@ -1,77 +1,64 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 
 namespace MonteStruct
 {
+    public struct Coords
+    {
+        public double x, y;
+        public Coords(double p1, double p2)
+        {
+            x = p1;
+            y = p2;
+        }
+    }
 
     class Program
     {
         static void Main(string[] args)
         {
 
-            Coords myCoords = new Coords();
-           
-
-           var rnd = new Random();
+            var rnd = new Random();
 
             Console.WriteLine("How many points do you wish to test? ");
             double s = double.Parse(Console.ReadLine());
             int s1 = (int)s;
 
-
-
             double x;
             double y;
             double z;
+               Coords [] point = new Coords[s1];
 
             for (var i = 0; i < s1; i++)
             {
-              x = rnd.NextDouble();
-              y = rnd.NextDouble();
+                point[i] = new Coords(rnd.NextDouble(), rnd.NextDouble());
 
-                z = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
-
-                Console.WriteLine(Math.Round(z,3));
-                if (z )
             }
-            Console.ReadLine();
 
-
-                            }
-
-
-            //int c1 = (int)p;
-
-            //Coords newCoords = new Coords();
-
-
-            //    double count = 0;
-
-            //    for (int i = 0; i < p; i++)
-            //    {
-            //        count++;
-            //        double x = rand.NextDouble();
-            //        double y = rand.NextDouble();
-
-            //        double Array[p] = new Array(,);
-
-
-
-
-            //        Array[i] newCoord = new Coords(x, y)
-            //        {
-            //            x, y;
-            //        }
-
-            //        struct Coord[;] coordArray = new Coord[p1];
-
-
-
-            //        (rand.NextDouble(), rand.NextDouble()); 
+            foreach (Coords i in point)
+            {
+                Console.WriteLine("\t{0:f3} {1:f3}", i.x, i.y);
+            }
+                
+            //    each (var i in point)
+            //{
+            //    Console.WriteLine;
             //}
-            //        double[] coords = new Coords[p1];
+            //Console.ReadLine();
+
+            //z = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+
+            //Console.WriteLine(Math.Round(z, 3));
+
+            //
         }
 
     }
+}
 
 
 
