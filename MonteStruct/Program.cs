@@ -15,7 +15,7 @@ namespace MonteStruct
             y = p2;
         }
 
-       public double Hypotenuse()
+        public double Hypotenuse()
         {
             return Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
         }
@@ -25,15 +25,12 @@ namespace MonteStruct
     {
         static void Main(string[] args)
         {
-
             var rnd = new Random();
 
             Console.WriteLine("How many points do you wish to test? ");
             double s = double.Parse(Console.ReadLine());
             int s1 = (int)s;
 
-            //double x;
-            //double y;
             double inCircle = 0;
             double outCircle = 0;
 
@@ -53,14 +50,20 @@ namespace MonteStruct
                 {
                     ++inCircle;
                 }
-                else if(i.Hypotenuse() > 1.0)
+                else if (i.Hypotenuse() > 1.0)
                 {
                     ++outCircle;
                 }
             }
-                Console.WriteLine("Returned " + inCircle + " points inside the circle, and " + outCircle + " points outsided the circle \n" +
-                    "Your estimate of Pi = " + (inCircle / outCircle));             
+            double piEstimate = (Math.Abs(((inCircle / point.Length) * 4) - Math.PI));
+
+            Console.Clear();
+            Console.WriteLine("Returned " + inCircle + " points inside the circle, and " + outCircle + " points outsided the circle \n" +
+                "Your estimate of Pi is: " + ((inCircle / point.Length) * 4));
+            Console.WriteLine("\nyour estimate is " + Math.Round(piEstimate, 5) + " from the actual value of Pi");
             Console.ReadLine();
+
+            //Math.Abs(((inCircle / point.Length) * 4) - Math.PI)
             //    each (var i in point)
             //{
             //    Console.WriteLine;
@@ -72,8 +75,8 @@ namespace MonteStruct
             //Console.WriteLine(Math.Round(z, 3));
 
             //
-        
-        } 
+
+        }
     }
 }
 
