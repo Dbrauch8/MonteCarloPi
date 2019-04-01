@@ -34,8 +34,8 @@ namespace MonteStruct
 
             //double x;
             //double y;
-            int inCircle = 0;
-            int outCircle = 0;
+            double inCircle = 0;
+            double outCircle = 0;
 
             Coords[] point = new Coords[s1];
 
@@ -47,7 +47,7 @@ namespace MonteStruct
 
             foreach (Coords i in point)
             {
-                //Console.WriteLine("\tx = {0:f3}, y = {1:f3}", i.x, i.y);
+                //Console.WriteLine("\tx = {0:f4}, y = {1:f4}", i.x, i.y);
 
                 if (i.Hypotenuse() <= 1.0)
                 {
@@ -58,8 +58,8 @@ namespace MonteStruct
                     ++outCircle;
                 }
             }
-                Console.WriteLine(outCircle);
-                Console.WriteLine(inCircle);             
+                Console.WriteLine("Returned " + inCircle + " points inside the circle, and " + outCircle + " points outsided the circle \n" +
+                    "Your estimate of Pi = " + (inCircle / outCircle));             
             Console.ReadLine();
             //    each (var i in point)
             //{
