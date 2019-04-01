@@ -62,20 +62,6 @@ namespace MonteStruct
                 "Your estimate of Pi is: " + ((inCircle / point.Length) * 4));
             Console.WriteLine("\nyour estimate is " + Math.Round(piEstimate, 5) + " from the actual value of Pi");
             Console.ReadLine();
-
-            //Math.Abs(((inCircle / point.Length) * 4) - Math.PI)
-            //    each (var i in point)
-            //{
-            //    Console.WriteLine;
-            //}
-            //Console.ReadLine();
-
-            //z = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
-
-            //Console.WriteLine(Math.Round(z, 3));
-
-            //
-
         }
     }
 }
